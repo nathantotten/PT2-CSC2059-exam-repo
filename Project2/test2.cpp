@@ -106,7 +106,7 @@ int main2()
 		cout << binarySearch(pi, 0, 7, key) << endl;
 		// B4. complete the statement, where XXX is what you think the
 		// complexity is in terms of the order(s) of the size of the data set
-		cout << "The complexity of the binary search is O(logN)" << endl;
+		cout << "The complexity of the binary search is O(log_2 N)" << endl;
 	}
 	delete[] pi;
 	return 0;
@@ -145,16 +145,21 @@ int main()
 
 	// run three search tests
 	for (int test = 1; test <= 3; test++) {
+
 		// take a search request from keyboard
 		cout << "Specify the number to be searched for: ";
 		int key;
 		cin >> key;
+
 		// H3. perform hashing-based search for the key number in the table;
 		// print the index if found or -1 otherwise
+
 		// need to make key into a string first so that we can put it into Hash_ function.
 		string sKey = to_string(key);
+
 		// get the hash index of the key (after converting to string for compatibility with Hash_)
 		int hashIndex = Hash_(sKey, tableSize);
+
 		// If the int at the index found using Hash_ in pht == key
 		if (int(pht[hashIndex]) == key)
 			// return the index
